@@ -1,9 +1,23 @@
- *::after, *::before {
+ *,*::after,
+ *::before {
    box-sizing: border-box;
    margin: 0;
-   padding: o;
+   padding: 0;
  }
 
-ul, ol {
-  list-style: none;
+ $brendColor: #ffedbb;
+
+ ul,
+ ol {
+   list-style: none;
+ }
+
+ body {
+   background-color: white;
+   font-family: 'SF Pro Display', sans-serif;
+ }
+
+ .container {
+   margin: 0 auto;
+   width: 80%;
  }

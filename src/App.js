@@ -1,7 +1,10 @@
 import './App.scss';
+import Login from './pages/Login/Login';
 
 function App() { 
-  return <h1 className="jimi">JImi jimi</h1>
+  return (
+      <Login/>
+    )
 }
 
 export default App;
