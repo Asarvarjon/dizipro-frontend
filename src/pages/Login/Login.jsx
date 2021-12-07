@@ -16,7 +16,7 @@ export default function Login(){
             <div className="login__form-wrapper">
             <form className="login__form">
                     <h2 className="login__title">
-                        Log in
+                        Login
                     </h2> 
 
                     <div className="login__form__inputs">
