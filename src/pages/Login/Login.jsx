@@ -26,7 +26,7 @@ export default function Login(){
 
                     <Link className="login__form__forgot-password-link" to="/forgot-password">Forgot your password?</Link>
 
-                    <Button>Register</Button>
+                    <Button>Login</Button>
 
                     <div className="login__form__signup-text-wrapper">
 							<p>Don’t have an account? </p>
