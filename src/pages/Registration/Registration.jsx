@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import { useState, useEffect } from "react";
 import RegionsService from "../../services/RegionsService";
+import UserService from "../../services/UserService";
 
 export default function Registration(){
 
@@ -37,9 +38,9 @@ export default function Registration(){
         const gender = event.target[3].value ? "male" : "female";
         const country = oCountries.find((e) => e.country_name === event.target[5].value);
 
-        console.log(name, password, email, gender, country);
+         UserService.CreateUserAccount(name, email, password, gender, country.country_id)
 
-
+        
     }
 
     return (
