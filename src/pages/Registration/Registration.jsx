@@ -4,12 +4,43 @@ import BeeImage from "../../assets/images/bee.png"
 import Input from "../../components/Input/Input";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import RegionsService from "../../services/RegionsService";
 
 export default function Registration(){
 
-    const [countries, setCountries] = useState(["Uzbekistan", "Russia"])
-    const [countryError, setCountryError] = useState(false) 
+    const [countries, setCountries] = useState([])
+    const [countryError, setCountryError] = useState(false);
+    const [oCountries, setOCountries] = useState([])
+
+    const getCountries = async () => {
+        let result = await RegionsService.GetAllRegions();
+
+        setOCountries(result?.data?.countries)
+
+        let sort = result?.data?.countries?.map((e) => e.country_name); 
+        setCountries(sort)
+    }
+
+    useEffect(() => {
+         getCountries()
+
+         return () => {};
+    }, []);
+
+
+    const submit = event => {
+        event.preventDefault(); 
+        const name = event.target[0]?.value;
+        const email = event.target[1]?.value;
+        const password = event.target[2]?.value; 
+        const gender = event.target[3].value ? "male" : "female";
+        const country = oCountries.find((e) => e.country_name === event.target[5].value);
+
+        console.log(name, password, email, gender, country);
+
+
+    }
 
     return (
         <div className="registration">
@@ -19,7 +50,7 @@ export default function Registration(){
                 <img className="registration__bee-image" src={BeeImage} alt="bee" />
 
             <div className="registration__form-wrapper">
-            <form className="registration__form">
+            <form className="registration__form" onSubmit={submit}>
                     <h2 className="registration__title">
                         Sign up
                     </h2> 
@@ -35,7 +66,7 @@ export default function Registration(){
 
                        <div className="registration__gender-wrapper">
                        <label className="registration__gender-item">
-                            <input type="radio" name="gender" />
+                            <input type="radio" name="gender"  />
                             <p className="">Male</p>
                         </label>
 
@@ -69,8 +100,7 @@ export default function Registration(){
                         </p>
                     </div>
 
-                    <datalist id="data">
-                       <option value="Uzbekistan">Uzbekistan</option>
+                    <datalist id="data"> 
                         {countries.length && countries.map((item, key) => {
                              return (
                                 <option key={key} value={item}>{item}</option>
