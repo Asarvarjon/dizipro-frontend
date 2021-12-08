@@ -4,8 +4,28 @@ import BeeImage from "../../assets/images/bee.png"
 import Input from "../../components/Input/Input";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
+import UserService from "../../services/UserService";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function Login(){
+    const [token, setToken] = useAuth()
+    const submit = async(event) => {
+        event.preventDefault()
+
+        const email = event.target[0].value
+        const password = event.target[1].value
+        if(!(email && password)) {
+            return
+        }
+
+        let response = await UserService.LoginAccount(email, password);
+        
+        
+        if(response?.data?.token) {
+            setToken(response.data.token)
+        }
+
+    }
     return (
         <div className="login">
             <Header/>
@@ -14,7 +34,7 @@ export default function Login(){
                 <img className="login__bee-image" src={BeeImage} alt="bee" />
 
             <div className="login__form-wrapper">
-            <form className="login__form">
+            <form onSubmit={submit} className="login__form">
                     <h2 className="login__title">
                         Login
                     </h2> 
