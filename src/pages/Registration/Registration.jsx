@@ -7,12 +7,14 @@ import Button from "../../components/Button/Button";
 import { useState, useEffect } from "react";
 import RegionsService from "../../services/RegionsService";
 import UserService from "../../services/UserService";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function Registration(){
 
     const [countries, setCountries] = useState([])
     const [countryError, setCountryError] = useState(false);
     const [oCountries, setOCountries] = useState([])
+    const [token, setToken] = useAuth()
 
     const getCountries = async () => {
         let result = await RegionsService.GetAllRegions();
@@ -30,16 +32,19 @@ export default function Registration(){
     }, []);
 
 
-    const submit = event => {
+    const submit = async event => {
         event.preventDefault(); 
         const name = event.target[0]?.value;
         const email = event.target[1]?.value;
         const password = event.target[2]?.value; 
         const gender = event.target[3].value ? "male" : "female";
-        const country = oCountries.find((e) => e.country_name === event.target[5].value);
+        const country = oCountries.find((e) => e.country_name === event.target[5].value); 
 
-         UserService.CreateUserAccount(name, email, password, gender, country.country_id)
+        let response = await UserService.CreateUserAccount(name, email, password, gender, country.country_id); 
 
+        if(response.data.token) {
+            setToken(response.data.token)
+        }
         
     }
 
