@@ -6,25 +6,42 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import UserService from "../../services/UserService";
 import { useAuth } from "../../contexts/AuthContext";
+import { useState } from "react";
 
 export default function Login(){
-    const [token, setToken] = useAuth()
+    const [token, setToken] = useAuth();
+    const [passwordError, setPasswordError] = useState("");
+    const [emailError, setEmailError] = useState(""); 
+
+
     const submit = async(event) => {
-        event.preventDefault()
+         try {
+            event.preventDefault()
 
-        const email = event.target[0].value
-        const password = event.target[1].value
-        if(!(email && password)) {
-            return
-        }
+            setEmailError("");
+			setPasswordError("");
 
-        let response = await UserService.LoginAccount(email, password);
-        
-        
-        if(response?.data?.token) {
-            setToken(response.data.token)
-        }
-
+            const email = event.target[0].value
+            const password = event.target[1].value
+            if(!(email && password)) {
+                return
+            }
+    
+            let response = await UserService.LoginAccount(email, password);
+ 
+            if(!response?.ok) {  
+                if(response?.data.message?.toLowercase().includes("password")) {
+                     setPasswordError("true")
+                } else {
+                    setEmailError("true")
+                }
+            }
+            
+            if(response?.data?.token) {
+                setToken(response?.data?.token)
+            }
+         } catch (error) { 
+         }
     }
     return (
         <div className="login">
@@ -40,8 +57,16 @@ export default function Login(){
                     </h2> 
 
                     <div className="login__form__inputs">
-                        <Input placeholder="Email" type="email" required name="email"/> 
-                        <Input placeholder="Password" type="password" required name="password"/>
+                        <Input placeholder={
+									emailError ? "Wrong email" : "Email"
+								}
+                         type="email" error={`${emailError}`} required name="email"/> 
+                        <Input placeholder={
+									passwordError
+										? "Incorrect password"
+										: "Password"
+								}
+                         type="password" error={`${passwordError}`} required name="password"/>
                     </div>  
 
                     <Link className="login__form__forgot-password-link" to="/forgot-password">Forgot your password?</Link>
