@@ -22,20 +22,21 @@ export default function Login(){
 			setPasswordError("");
 
             const email = event.target[0].value
-            const password = event.target[1].value
+            const password = event.target[1].value;
+
             if(!(email && password)) {
                 return
             }
     
             let response = await UserService.LoginAccount(email, password);
- 
+             
             if(!response?.ok) {  
-                if(response?.data.message?.toLowercase().includes("password")) {
+                if (response?.message?.toLowerCase()?.includes("password")) {
                      setPasswordError("true")
                 } else {
                     setEmailError("true")
                 }
-            }
+            } 
             
             if(response?.data?.token) {
                 setToken(response?.data?.token)
@@ -57,16 +58,16 @@ export default function Login(){
                     </h2> 
 
                     <div className="login__form__inputs">
-                        <Input placeholder={
+                        <Input  type="email" placeholder={
 									emailError ? "Wrong email" : "Email"
 								}
-                         type="email" error={`${emailError}`} required name="email"/> 
-                        <Input placeholder={
+                         error={`${emailError}`} required name="email"/> 
+                        <Input type="password" placeholder={
 									passwordError
 										? "Incorrect password"
 										: "Password"
 								}
-                         type="password" error={`${passwordError}`} required name="password"/>
+                          error={`${passwordError}`} required name="password"/>
                     </div>  
 
                     <Link className="login__form__forgot-password-link" to="/forgot-password">Forgot your password?</Link>
