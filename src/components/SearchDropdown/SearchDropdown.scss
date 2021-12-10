@@ -1,0 +1,15 @@
+.search-dropdown { 
+
+    &__input {
+       padding: 16px;
+       font-size: 16px;
+       outline: none;
+       background-color: #fafafa;
+       border: none; 
+
+    }
+ 
+    .open {
+        background-color: red;
+    }
+}

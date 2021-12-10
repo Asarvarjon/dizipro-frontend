@@ -1,0 +1,53 @@
+.home-header {
+    width: calc(100% - 300px);
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__title {
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+
+    &__action-link {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    &__action-link svg {
+        width: 20px;
+        fill: black;
+    }
+
+    &__actions-list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__actions-item {
+        display: flex;
+        align-items: center;
+    }
+
+    &__actions-item button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin: 0px 10px;
+    }
+
+    &__action-profile-img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+}
