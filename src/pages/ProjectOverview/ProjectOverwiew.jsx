@@ -68,7 +68,7 @@ export default function ProjectOverview() {
 
                           <ul className="overview__content-files-list">  
                               <li className="overview__content-files-item">
-                                   <a href="#" className="overview__content-files-link">
+                                   <a href="/overview" className="overview__content-files-link">
                                        <img src={FileIcon} alt="File Icon" className="file-icon" />
                                        <p className="file-title">
                                            3D car model.rar
@@ -80,7 +80,7 @@ export default function ProjectOverview() {
                                    </a>
                               </li> 
                               <li className="overview__content-files-item">
-                                   <a href="#" className="overview__content-files-link">
+                                   <a href="/overview" className="overview__content-files-link">
                                        <img src={FileIcon} alt="File Icon" className="file-icon" />
                                        <p className="file-title">
                                            3D car model.rar
@@ -93,7 +93,7 @@ export default function ProjectOverview() {
                               </li> 
 
                               <li className="overview__content-files-item">
-                                   <a href="#" className="overview__content-files-link">
+                                   <a href="/overview" className="overview__content-files-link">
                                        <img src={FileIcon} alt="File Icon" className="file-icon" />
                                        <p className="file-title">
                                            3D car model.rar
