@@ -4,6 +4,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import CheckYourEmail from "./pages/CheckYourEmail/CheckYourEmail";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
+import ProjectOverview from "./pages/ProjectOverview/ProjectOverwiew";
 import Registration from "./pages/Registration/Registration";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import PublicRoute from "./routes/PublicRoute";
@@ -23,9 +24,10 @@ function App() {
 						path="/checkyouremail"
 						component={CheckYourEmail}
 						exact
-					/>
+					/> 
 
 					<ProtectedRoute path="/" component={Home} exact />
+					<ProtectedRoute path="/overview" component={ProjectOverview} exact />
 				</Switch>
 			</BrowserRouter>
 		</AuthProvider>

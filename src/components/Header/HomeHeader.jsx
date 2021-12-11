@@ -5,14 +5,14 @@ import SearchDropdown from "../SearchDropdown/SearchDropdown";
 import { useState } from "react";
 
 
-export default function HomeHeader() {
+export default function HomeHeader({children}) {
 
     const [searchOpened, setSearchOpened] = useState(false);
 
-    return <header className="home-header">
+    return <header className="home-header">  
         <h2 className="home-header__title" >
-            Projects
-        </h2>
+             Projects
+        </h2>  
 
         <ul className="home-header__actions-list">
             <li className="home-header__actions-item">
