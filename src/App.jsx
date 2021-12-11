@@ -1,3 +1,5 @@
+
+  
 import { BrowserRouter, Switch } from "react-router-dom";
 import "./App.scss";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -24,10 +26,11 @@ function App() {
 						path="/checkyouremail"
 						component={CheckYourEmail}
 						exact
-					/> 
+					/>
 
 					<ProtectedRoute path="/" component={Home} exact />
 					<ProtectedRoute path="/overview" component={ProjectOverview} exact />
+
 				</Switch>
 			</BrowserRouter>
 		</AuthProvider>
