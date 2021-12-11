@@ -6,6 +6,10 @@ import FileIcon from "../../assets/icons/file.png"
 import Alert from "../../components/Alert/Alert"
 import SuccesIcon from "../../assets/icons/success.png"
 import NextIcon from "../../assets/icons/next.png"
+import Ellipse from "../../assets/icons/ellipse.png";
+import SupportIcon from "../../assets/icons/support"
+
+
 
 import { Link } from "react-router-dom";
 
@@ -121,7 +125,80 @@ export default function ProjectOverview() {
 
                      </div>
                      <div className="overview__features-box">
+                        <ul className="overview__features-list">
+                            <li className="overview__features-item">
+                                 <h5>3D skills</h5>
 
+                                <ul className="overview__skills-list">
+                                    <li className="overview__skills-item">
+                                        <img src={Ellipse} alt="" className="ellipse" />
+                                         <p>3D modelling</p>
+                                    </li>
+                                    <li className="overview__skills-item">
+                                        <img src={Ellipse} alt="" className="ellipse" />
+                                         <p>3D modelling</p>
+                                    </li>
+                                    <li className="overview__skills-item">
+                                        <img src={Ellipse} alt="" className="ellipse" />
+                                         <p>3D modelling</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li className="overview__features-item">
+                                <h5> 3D software</h5>
+
+                                <ul className="overview__softwares-list">
+                                    <li className="overview__softwares-item">
+                                         <img src={Ellipse} alt="" className="ellipse" /> 
+                                          <p>Autodesk 3D max</p>
+                                    </li>
+                                    <li className="overview__softwares-item">
+                                         <img src={Ellipse} alt="" className="ellipse" /> 
+                                          <p>Autodesk 3D max</p>
+                                    </li>
+                                    <li className="overview__softwares-item">
+                                         <img src={Ellipse} alt="" className="ellipse" /> 
+                                          <p>Autodesk 3D max</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                         <ul className="overview__service-list">
+                             <li className="overview__service-item">
+                                 <h5 className="service-title">
+                                    Deadline
+                                 </h5>
+
+                                 <p className="service-number">
+                                     12.02.2021
+                                 </p>
+                             </li>
+                             <li className="overview__service-item">
+                                 <h5 className="service-title">
+                                    Price
+                                 </h5>
+
+                                 <p className="service-number">
+                                     $500
+                                 </p>
+                             </li>
+                         </ul> 
+
+                         <div className="overview__links-box">
+                             <Link className="overview__cancel-link" to="/cancel" >
+                                Cancel the order
+                             </Link>
+
+                             <Button className="overview__contact-button">
+                                 <SupportIcon className="overview__contact-button__icon" />
+                                 Contact with moderator
+                             </Button>
+                         </div>
+
+                         <Button className="overview__order-project">
+                             Order a project
+                         </Button>
                      </div>
                  </div>
             </main>
