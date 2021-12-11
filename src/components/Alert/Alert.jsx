@@ -3,7 +3,7 @@ import CloseButton from "./../../assets/icons/close_button.png"
 import { useState } from "react";
 
 
-export default function Alert({children}) {
+export default function Alert(props) {
 
     const [closed, setClosed] = useState(false);
 
@@ -12,8 +12,8 @@ export default function Alert({children}) {
     }
 
     return (
-        <div className="alert"> 
-            {children}
+        <div className={`alert ${props.className ? props.className : ""}` }> 
+            {props.children}
 
 
             <button onClick={() => {
