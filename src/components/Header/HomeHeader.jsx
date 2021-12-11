@@ -1,5 +1,3 @@
-
-  
 import React from "react";
 import NotificationIcon from "../../assets/icons/notification";
 import SearchIcon from "../../assets/icons/search";
