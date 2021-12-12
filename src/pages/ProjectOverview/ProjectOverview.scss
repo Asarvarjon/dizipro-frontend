@@ -8,8 +8,7 @@
     padding: 20px;
     overflow-y: scroll;
     height: 100%;
-    padding-bottom: 110px;
-
+    padding-bottom: 110px; 
 
     &__header {
         display: flex;
@@ -37,6 +36,7 @@
             padding: 7px 5px;
             border-radius: 25px;
             font-size: 14px;
+            color: white;
         }
     }
 
@@ -540,7 +540,8 @@
         top: 9%;
         padding-bottom: 200px;
         display: flex;
-        align-items: center;
+        align-items: center; 
+         
 
         &__header {
             width: 100%; 
@@ -597,6 +598,7 @@
         &__features-box {
             width: 100%;
             margin-top: 20px;
+            padding: 0px;
         }
         
 
@@ -620,9 +622,15 @@
 
         &__service-list {
             width: 100%;
-            align-items: flex-start;
-
+            align-items: flex-start; 
         } 
+
+        &__service-item {
+            width: 50%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+        }
 
         &__alert {
             display: none;
@@ -639,6 +647,14 @@
         &__links-box {
             flex-direction: row;
             align-items: center;
+        }
+        &__contact-button {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        &__cancel-link {
+            font-size: 14px;
         }
         
     }
