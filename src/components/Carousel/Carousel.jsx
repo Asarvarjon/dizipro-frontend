@@ -32,7 +32,7 @@ const Carousel = ({children}) => {
     useEffect(() => {
         const interval = setInterval(() => {
             updateIndex(activeIndex + 1)
-        }, 1000);
+        }, 4000);
 
 
         return () => {
@@ -51,7 +51,7 @@ const Carousel = ({children}) => {
         <div
          {...handlers}
         className="carousel">
-            <div className="inner" style={{transform: `translateX(-${activeIndex * 50}%)`}}>
+            <div className="inner" style={{transform: `translateX(-${activeIndex * 100}%)`}}>
                  {
                      React.Children.map(children, (child, index) => {
                          return React.cloneElement(child, {
@@ -66,15 +66,13 @@ const Carousel = ({children}) => {
                     onClick={() => {
                         updateIndex(activeIndex - 1)
                     }}
-                >
-                    Prev
+                > 
                 </button>
 
 
                 <button onClick={() => {
                     updateIndex(activeIndex + 1)
-                }}>
-                    Next
+                }}> 
                 </button>
             </div>
         </div>

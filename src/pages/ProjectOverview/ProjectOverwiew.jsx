@@ -10,10 +10,36 @@ import Ellipse from "../../assets/icons/ellipse.png";
 import SupportIcon from "../../assets/icons/support";  
 import { Link } from "react-router-dom";  
 
-import Carousel, {CarouselItem} from "../../components/Carousel/Carousel";
-
-
+import Carousel, {CarouselItem} from "../../components/Carousel/Carousel"; 
 import React, { useState, useEffect } from "react";  
+
+
+const links = [
+    {
+        a: "https://picsum.photos/150/150?1"
+    },
+    {
+        a: "https://picsum.photos/150/150?12"
+    },
+     {
+        a: "https://picsum.photos/150/150?3"
+    },
+     {
+        a: "https://picsum.photos/150/150?4"
+    },
+     {
+        a: "https://picsum.photos/150/150?5"
+    },
+     {
+        a: "https://picsum.photos/150/150?6"
+    },
+     {
+        a: "https://picsum.photos/150/150?7"
+    },
+     {
+        a: "https://picsum.photos/150/150?1"
+    }
+]
 
 
 export default function ProjectOverview() {
@@ -65,19 +91,26 @@ export default function ProjectOverview() {
                           </ul> 
 
                           <div className="carousel-box">
-                                <Carousel>
-                                    <CarouselItem>
-                                        Jimi
-                                    </CarouselItem>
-                                    <CarouselItem>
-                                        Jimi2
-                                    </CarouselItem>
-                                    <CarouselItem>
-                                        Jimi3
-                                    </CarouselItem>
-                                    <CarouselItem>
-                                        Jimi3
-                                    </CarouselItem>
+                                <Carousel> 
+                                        <CarouselItem>
+                                                {<img src="https://picsum.photos/150/150?1"  alt="image" /> }
+                                         </CarouselItem> 
+                                          <CarouselItem>
+                                                {<img src="https://picsum.photos/150/150?2"  alt="image" />}
+                                         </CarouselItem> 
+                                         <CarouselItem>
+                                                {<img src="https://picsum.photos/150/150?3"  alt="image" />}
+                                         </CarouselItem> 
+                                         <CarouselItem>
+                                                {<img src="https://picsum.photos/150/150?4"  alt="image" />}
+                                         </CarouselItem>  
+                                         <CarouselItem>
+                                               { <img src="https://picsum.photos/150/150?5"  alt="image" />}
+                                         </CarouselItem> 
+                                         <CarouselItem>
+                                                {<img src="https://picsum.photos/150/150?6"  alt="image" />}
+                                         </CarouselItem> 
+
                                 </Carousel>
                           </div>
                         

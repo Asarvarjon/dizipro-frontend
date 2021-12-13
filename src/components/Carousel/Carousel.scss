@@ -5,7 +5,10 @@
 
 @media (max-width: 556px) {
     .carousel {
+        overflow: hidden;
         display: block;
+        width: 500px;
+        margin: 0 auto;
     }
     .carousel-item {
         display: inline-flex;
@@ -28,5 +31,46 @@
     
     .indicators > button {
         margin: 5px;
+        padding: 4px;
+        background-color: #00000066;
+        border: none;
+        border-radius: 50%;
+    }
+}
+
+@media (max-width: 540px) {
+    .carousel {
+        overflow: hidden;
+        display: block;
+        margin: 0 auto;
+        width: 400px;
+    }
+}
+
+
+@media (max-width: 428px) {
+    .carousel {
+        overflow: hidden;
+        display: block;
+        width: 320px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 360px) {
+    .carousel {
+        overflow: hidden;
+        display: block;
+        width: 310px; 
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 340px) {
+    .carousel {
+        overflow: hidden;
+        display: block;
+        width: 280px; 
+        margin: 0 auto;
     }
 }
