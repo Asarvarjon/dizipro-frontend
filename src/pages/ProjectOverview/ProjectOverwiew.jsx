@@ -11,11 +11,7 @@ import SupportIcon from "../../assets/icons/support";
 import { Link } from "react-router-dom";  
 
 
-import React, { useState, useEffect } from "react"; 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css"; 
-import Slider from "react-slick";
-import Carousel from "../../components/Carousel/Carousel";
+import React, { useState, useEffect } from "react";  
 
 
 export default function ProjectOverview() {
@@ -52,11 +48,19 @@ export default function ProjectOverview() {
 
                           <h4 className="overview__content-title">
                              Photos
-                          </h4>  
-
-                          <div>
-                             <Carousel/>
-                          </div>
+                          </h4>
+                          
+                          <ul className="overview__content-photos-list">   
+                              <li className="overview__content-photos-item">
+                                  <img src="https://picsum.photos/150?2" alt="project" className="overview__content-photo" />
+                              </li>
+                              <li className="overview__content-photos-item">
+                                  <img src="https://picsum.photos/150?3" alt="project" className="overview__content-photo" />
+                              </li>
+                              <li className="overview__content-photos-item">
+                                  <img src="https://picsum.photos/150?4" alt="project" className="overview__content-photo" />
+                              </li>
+                          </ul> 
                         
 
                           <h4 className="overview__content-title">
@@ -202,75 +206,3 @@ export default function ProjectOverview() {
         </>
     )
 }
-
-
-
-
-
-
-
-
-
-function SimpleSlider() {
-    const [suggestions, setSuggestions] = useState([]);
-  
-    useEffect(() => {
-      fetch("https://jsonplaceholder.typicode.com/users")
-        .then((res) => res.json())
-        .then((data) => {
-          setSuggestions(data);
-        });
-    }, []);
-  
-    let settings = {
-      infinite: false,
-      speed: 1000,
-      arrows: true,
-      slidesToShow: 5,
-      slidesToScroll: 4,
-  
-      responsive: [
-        {
-          breakpoint: 960,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 2,
-          },
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 2,
-          },
-        },
-      ],
-    };
-    return (  
-          <Slider {...settings}>
-            {suggestions.map((current) => (
-              <div className="out" key={current.id}>
-                <div className="card">
-                  <img
-                    className="rounded-circle"
-                    alt={"users here"}
-                    src={`https://source.unsplash.com/random/${current.id}`}
-                    height={56}
-                    width={56}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{current.username}</h5>
-                    <small className="card-text text-sm-center text-muted">
-                      In your contacts
-                    </small>
-                    <br />
-                    <button className="btn btn-sm follow btn-primary">
-                      Follow
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Slider>  
-    );
-  }
