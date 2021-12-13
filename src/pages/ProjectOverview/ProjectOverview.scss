@@ -473,6 +473,11 @@
             font-size: 12px;
         } 
 
+        &__content-photo {
+            width: 120px;
+            height: 120px;
+        }
+
         
     }
 }
@@ -490,8 +495,8 @@
         }
 
         &__content-photo {
-            width: 160px;
-            height: 160px;
+            width: 100px;
+            height: 100px;
         }
 
         &__content-description {
@@ -533,6 +538,21 @@
         }
     }
 }
+
+@media (max-width: 723px) { 
+    .overview__content-photo {
+        width: 85px;
+        height: 85px;
+    }
+}
+
+@media (max-width: 633px) { 
+    .overview__content-photo {
+        width: 60px;
+        height: 60px;
+    }
+}
+
 
 @media (max-width: 556px) {
     .overview {

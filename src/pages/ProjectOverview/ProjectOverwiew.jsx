@@ -15,6 +15,7 @@ import React, { useState, useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"; 
 import Slider from "react-slick";
+import Carousel from "../../components/Carousel/Carousel";
 
 
 export default function ProjectOverview() {
@@ -51,19 +52,11 @@ export default function ProjectOverview() {
 
                           <h4 className="overview__content-title">
                              Photos
-                          </h4>
-                          
-                          <ul className="overview__content-photos-list">   
-                              <li className="overview__content-photos-item">
-                                  <img src="https://picsum.photos/150?2" alt="project" className="overview__content-photo" />
-                              </li>
-                              <li className="overview__content-photos-item">
-                                  <img src="https://picsum.photos/150?3" alt="project" className="overview__content-photo" />
-                              </li>
-                              <li className="overview__content-photos-item">
-                                  <img src="https://picsum.photos/150?4" alt="project" className="overview__content-photo" />
-                              </li>
-                          </ul> 
+                          </h4>  
+
+                          <div>
+                             <Carousel/>
+                          </div>
                         
 
                           <h4 className="overview__content-title">
