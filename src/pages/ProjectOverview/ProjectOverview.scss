@@ -588,7 +588,12 @@
             margin-bottom: 10px;
         }
 
+        &__content-photos-list {
+            display: none;
+        }
+
         &__content-photo {
+            display: none;
             width: 140px;
             height: 140px;
             margin: 0px;

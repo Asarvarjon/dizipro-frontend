@@ -10,6 +10,8 @@ import Ellipse from "../../assets/icons/ellipse.png";
 import SupportIcon from "../../assets/icons/support";  
 import { Link } from "react-router-dom";  
 
+import Carousel, {CarouselItem} from "../../components/Carousel/Carousel";
+
 
 import React, { useState, useEffect } from "react";  
 
@@ -61,12 +63,28 @@ export default function ProjectOverview() {
                                   <img src="https://picsum.photos/150?4" alt="project" className="overview__content-photo" />
                               </li>
                           </ul> 
+
+                          <div className="carousel-box">
+                                <Carousel>
+                                    <CarouselItem>
+                                        Jimi
+                                    </CarouselItem>
+                                    <CarouselItem>
+                                        Jimi2
+                                    </CarouselItem>
+                                    <CarouselItem>
+                                        Jimi3
+                                    </CarouselItem>
+                                    <CarouselItem>
+                                        Jimi3
+                                    </CarouselItem>
+                                </Carousel>
+                          </div>
                         
 
                           <h4 className="overview__content-title">
-                             Photos
-                          </h4>
-
+                             Files
+                          </h4> 
                           <ul className="overview__content-files-list">  
                               <li className="overview__content-files-item">
                                    <a href="/overview" className="overview__content-files-link">
@@ -105,8 +123,7 @@ export default function ProjectOverview() {
                                        </p>
                                    </a>
                               </li> 
-                          </ul>
-
+                          </ul> 
                          
                           <Alert className="overview__alert">
                              <h4 className="overview__alert-title">

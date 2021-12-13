@@ -1,0 +1,32 @@
+.carousel {
+   overflow: hidden;
+   display: none;
+}
+
+@media (max-width: 556px) {
+    .carousel {
+        display: block;
+    }
+    .carousel-item {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+    }
+    
+    .inner {
+        white-space: nowrap;
+        transition: transform 0.3s;
+    }
+    
+    
+    .indicators {
+        display: flex;
+        justify-content: center;
+    
+    }
+    
+    .indicators > button {
+        margin: 5px;
+    }
+}
